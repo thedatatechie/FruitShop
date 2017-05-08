@@ -6,7 +6,7 @@ import org.scalatest._
 /**
   * Created by vijay on 08/05/2017.
   */
-class ItemSelectTest extends FunSuite with Matchers with BeforeAndAfter{
+class ItemSelectTest extends FunSuite with Matchers with BeforeAndAfter {
 
   var itemSelect: ItemSelect = _
   var item: Item = _
@@ -16,36 +16,36 @@ class ItemSelectTest extends FunSuite with Matchers with BeforeAndAfter{
     itemSelect = new ItemSelect
   }
 
-  test("Select the product item as apple"){
+  test("Select the product item as apple") {
     val itemName = "apple"
     item = itemSelect.getItem(itemName)
-    item.isInstanceOf[Apple] should equal (true)
+    item.isInstanceOf[Apple] should equal(true)
   }
 
-  test("Select the product item as orange"){
+  test("Select the product item as orange") {
     val itemName = "orange"
     item = itemSelect.getItem(itemName)
-    item.isInstanceOf[Orange] should equal (true)
+    item.isInstanceOf[Orange] should equal(true)
   }
 
-  test(raw"Return the item price as £0.60 for Apple"){
+  test(raw"Return the item price as £0.60 for Apple") {
     val itemName = "apple"
     item = itemSelect.getItem(itemName)
     val priceShouldBe = BigDecimal("0.60")
-    priceShouldBe.setScale(2,BigDecimal.RoundingMode.FLOOR)
+    priceShouldBe.setScale(2, BigDecimal.RoundingMode.FLOOR)
 
     price = item.getPrice
-    price should equal (priceShouldBe)
+    price should equal(priceShouldBe)
   }
 
-  test("""Return the item price as £0.25 for Orange"""){
+  test("""Return the item price as £0.25 for Orange""") {
     val itemName = "orange"
     item = itemSelect.getItem(itemName)
     val priceShouldBe = BigDecimal("0.25")
-    priceShouldBe.setScale(2,BigDecimal.RoundingMode.FLOOR)
+    priceShouldBe.setScale(2, BigDecimal.RoundingMode.FLOOR)
 
     price = item.getPrice
-    price should equal (priceShouldBe)
+    price should equal(priceShouldBe)
   }
 
 }

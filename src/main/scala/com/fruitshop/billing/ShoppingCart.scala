@@ -1,6 +1,6 @@
 package com.fruitshop.billing
 
-import com.fruitshop.billing.actions.ItemSelect
+import com.fruitshop.billing.actions.{ItemPrint, ItemSelect}
 import com.fruitshop.billing.items.Item
 
 /**
@@ -14,6 +14,7 @@ object ShoppingCart {
     totalBill.setScale(2, BigDecimal.RoundingMode.FLOOR)
 
     val iSelect = new ItemSelect()
+    val iPrint = new ItemPrint()
 
     if (args.length == 0) {
       System.out.println("Please enter the list of items to be billed.")
@@ -21,12 +22,13 @@ object ShoppingCart {
     }
 
     try {
-      // Getting the Subtotal for all the items.
+      // Getting the Total amount for all the items.
       for (iName <- args) {
         val iItem: Item = iSelect.getItem(iName)
 
         if (iItem != null) {
           totalBill = totalBill + (iItem.getPrice)
+          iPrint.printItem(iName, iItem.getPrice)
 
         } else {
           val itemName = iName.substring(0, 1).toUpperCase() + iName.substring(1).toLowerCase()
@@ -34,7 +36,11 @@ object ShoppingCart {
         }
       }
 
-      println(args.mkString("[",", ","]")+" => £"+totalBill)
+      // Printing the Total onto the console.
+      iPrint.printItem("------------------ \n" +
+        "Total", totalBill)
+
+      println(args.mkString("[", ", ", "]") + " => £" + totalBill)
 
     } catch {
       // Will catch the Exceptions if there are any.
