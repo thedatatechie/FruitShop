@@ -53,6 +53,11 @@ object ShoppingCart {
         totalDiscount = totalDiscount + iDiscount.getDiscount(itemName)
       }
 
+      if(totalDiscount.equals(BigDecimal("0.00"))){
+        println("(Note: No offers applicable on this shopping list. \n" +
+          "       Use our wide range of offers to save more.)")
+      }
+
       println("---------------------")
       // Printing the Total bill
       sales = totalBill - totalDiscount
@@ -70,9 +75,10 @@ object ShoppingCart {
       }
     } finally {
       // Will execute the finallly block.
-      ItemSelect.apples = 0
-      ItemSelect.oranges = 0
-      System.out.println("\nPricing an Items Basket is complete.")
+      System.out.println("\nPricing an Items Basket is complete. \n" +
+        "Thanks for shopping with us. \n" +
+        "We will be glad to serve you again. \n" +
+        "Thank you.")
     }
   }
 
