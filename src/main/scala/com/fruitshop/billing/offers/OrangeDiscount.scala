@@ -2,7 +2,6 @@ package com.fruitshop.billing.offers
 
 import java.text.NumberFormat
 import java.util.Locale
-
 import com.fruitshop.billing.actions.ItemSelect
 import com.fruitshop.billing.items.Orange
 
@@ -11,7 +10,7 @@ import com.fruitshop.billing.items.Orange
   */
 class OrangeDiscount extends Offer {
 
-  override def priceReduction: BigDecimal = {
+  def priceReduction: BigDecimal = {
 
     val orange = new Orange()
     val numFormat = NumberFormat.getCurrencyInstance(Locale.UK)
