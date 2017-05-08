@@ -24,3 +24,8 @@ class ItemSelect {
 
 }
 
+object ItemSelect{
+  var apples: Int = 0
+  var oranges: Int = 0
+}
+

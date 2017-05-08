@@ -13,7 +13,7 @@ class ItemPrint {
     val itemName = item.substring(0, 1).toUpperCase() + item.substring(1).toLowerCase()
     val numFormat = NumberFormat.getCurrencyInstance(Locale.UK)
     val str = numFormat.format(itemPrice)
-    System.out.println(itemName + ":\t" + "\t" + str)
+    System.out.println(itemName+":  \t"+ "\t"+str)
     itemName + ": " + str
   }
 
