@@ -1,6 +1,5 @@
 package com.fruitshop.billing.actions
 
-import com.fruitshop.billing.offers.Offer
 import org.junit.runner.RunWith
 import org.scalatest._
 import org.scalatest.junit.JUnitRunner
