@@ -12,8 +12,10 @@ class ItemSelect {
 
     // If logic to create an instance object for each item.
     val itemCreate: Item = if (itemName.equals("APPLE")) {
+      ItemSelect.apples = ItemSelect.apples +1
       new Apple
     } else if (itemName.equals("ORANGE")) {
+      ItemSelect.oranges = ItemSelect.oranges +1
       new Orange
     } else {
       null

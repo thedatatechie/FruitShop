@@ -28,6 +28,8 @@ object ShoppingCart {
     }
 
     try {
+      println("Bill")
+      println("---------------------")
       // Getting the Total amount for all the items.
       for (iName <- args) {
         val iItem: Item = iSelect.getItem(iName)
@@ -42,7 +44,7 @@ object ShoppingCart {
         }
       }
 
-      println("------------------")
+      println("---------------------")
       // Printing the Subtotal onto the console.
       iPrint.printItem("Subtotal", totalBill)
 
@@ -51,11 +53,14 @@ object ShoppingCart {
         totalDiscount = totalDiscount + iDiscount.getDiscount(itemName)
       }
 
+      println("---------------------")
       // Printing the Total bill
       sales = totalBill - totalDiscount
       iPrint.printItem("Total", sales)
 
-      println(args.mkString("[", ", ", "]") + " => £" + sales)
+      println("---------------------")
+      val itemsList = args.map(iName => iName.substring(0, 1).toUpperCase() + iName.substring(1).toLowerCase())
+      println(itemsList.mkString("[", ", ", "]") + " => £" + sales)
 
     } catch {
       // Will catch the Exceptions if there are any.

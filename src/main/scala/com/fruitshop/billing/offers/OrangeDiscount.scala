@@ -16,7 +16,7 @@ class OrangeDiscount extends Offer {
     val numFormat = NumberFormat.getCurrencyInstance(Locale.UK)
 
     val counter: Int = (ItemSelect.oranges / 3).toInt
-    val amount: BigDecimal = orange.getPrice;
+    val amount: BigDecimal = orange.getPrice
 
     val discountSum = amount * BigDecimal(counter)
     discountSum.setScale(2, BigDecimal.RoundingMode.FLOOR)
