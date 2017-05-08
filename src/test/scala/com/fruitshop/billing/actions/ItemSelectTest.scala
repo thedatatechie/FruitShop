@@ -1,6 +1,6 @@
-package com.fruitshop.billing.items
+package com.fruitshop.billing.actions
 
-import com.fruitshop.billing.actions.ItemSelect
+import com.fruitshop.billing.items.{Apple, Item, Orange}
 import org.scalatest._
 
 /**
