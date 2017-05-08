@@ -36,9 +36,9 @@ object ShoppingCart {
         }
       }
 
+      println("------------------")
       // Printing the Total onto the console.
-      iPrint.printItem("------------------ \n" +
-        "Total", totalBill)
+      iPrint.printItem("Total", totalBill)
 
       println(args.mkString("[", ", ", "]") + " => £" + totalBill)
 
